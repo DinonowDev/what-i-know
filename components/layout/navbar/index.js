@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div className={classes.navbar}>
       <div className={classes.navbarContainer}>
-        <span className={classes.donateUs}>حمایت از ما</span>
+        <a href="https://idpay.ir/whatiknow" className={classes.donateUs}>حمایت از ما</a>
         <h1 className={classes.title}>
           من چی میدونم <span className={classes.titleQ}>؟</span>
         </h1>
