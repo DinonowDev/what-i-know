@@ -13,7 +13,7 @@ const Navbar = () => {
           <FaDonate className={classes.donateIcon}/>
         </a>
         <h1 className={classes.title}>
-          من چی میدونم <span className={classes.titleQ}>؟</span>
+          من چی میدونم<span className={classes.titleQ}>؟</span>
         </h1>
         <div className={classes.icons}>
           <a href="https://github.com/DinonowDev/what-i-know">

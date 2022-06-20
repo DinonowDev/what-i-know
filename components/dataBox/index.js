@@ -41,8 +41,8 @@ const DataBox = ({
           <FaInternetExplorer className={classes.icon} />
         </div>
         <div className={classes.details}>
-          <span>سرویس ارائه دهنده اینترنت : {userData.isp.name}</span>
-          <span>دامنه : {userData.isp.domain}</span>
+          <span>سرویس ارائه دهنده اینترنت : {userData.isp.name ? userData.isp.name : "نامشخص"}</span>
+          <span>دامنه : {userData.isp.domain ? userData.isp.domain  : "نامشخص"}</span>
           <span>نوع : {userData.isp.type}</span>
         </div>
       </div>
