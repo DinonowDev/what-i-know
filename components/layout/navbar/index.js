@@ -2,13 +2,16 @@
 import classes from "./style.module.scss";
 
 // import icons
-import { FaGithub, FaTelegram, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaTelegram, FaInstagram, FaLinkedin , FaDonate } from "react-icons/fa";
 
 const Navbar = () => {
   return (
     <div className={classes.navbar}>
       <div className={classes.navbarContainer}>
         <a href="https://idpay.ir/whatiknow" className={classes.donateUs}>حمایت از ما</a>
+        <a href="https://idpay.ir/whatiknow" className={classes["donateUs-2"]}>
+          <FaDonate className={classes.donateIcon}/>
+        </a>
         <h1 className={classes.title}>
           من چی میدونم <span className={classes.titleQ}>؟</span>
         </h1>
