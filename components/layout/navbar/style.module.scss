@@ -1,0 +1,138 @@
+.navbar {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  .navbarContainer {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    .donateUs {
+      margin-top: 15px;
+      width: 160px;
+      height: 35px;
+      font-size: 18px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      text-shadow: 0 0 4px #fff, 0 0 7px #fff, 0 0 14px #fff;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        border-radius: 10px;
+        width: 0%;
+        background-color: #fff;
+        box-shadow: 0 0 4px #fff, 0 0 7px #fff, 0 0 14px #fff;
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 0;
+        transition: all 0.4s linear;
+      }
+      &:hover {
+        &:after {
+          width: 70%;
+        }
+      }
+    }
+    .icons {
+      align-items: center;
+      justify-content: space-evenly;
+      min-width: 160px;
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 20px;
+        transition: all 0.3s 0.1s;
+        &:hover {
+          transform: scale(1.3, 1.3);
+          color: #f1b910;
+        }
+      }
+    }
+    .titleQ {
+      font-size: 40px;
+      color: #f53b57;
+      // animation: neonTitleQ 4s infinite;
+    }
+    .title {
+      font-size: 30px;
+      font-family: "LaleZar";
+      color: #f1b910;
+      // animation: neonTitle 4s infinite;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbarContainer {
+    justify-content: center;
+    .donateUs {
+      display: none;
+    }
+    .icons {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .navbarContainer {
+    justify-content: space-between;
+    .icons {
+      display: flex;
+    }
+  }
+}
+
+// @keyframes neonTitleQ {
+//   0% {
+//     text-shadow: 0 0 4px #f53b57, 0 0 7px #f53b57, 0 0 14px #f53b57,
+//       0 0 22px #f53b57;
+//   }
+//   25% {
+//     text-shadow: 0 0 3px #f53b57, 0 0 6px #f53b57, 0 0 12px #f53b57,
+//       0 0 19px #f53b57;
+//   }
+//   50% {
+//     text-shadow: 0 0 1px #f53b57, 0 0 2px #f53b57, 0 0 5px #f53b57,
+//       0 0 10px #f53b57;
+//   }
+//   75% {
+//     text-shadow: 0 0 3px #f53b57, 0 0 6px #f53b57, 0 0 12px #f53b57,
+//       0 0 19px #f53b57;
+//   }
+//   100% {
+//     text-shadow: 0 0 4px #f53b57, 0 0 7px #f53b57, 0 0 14px #f53b57,
+//       0 0 22px #f53b57;
+//   }
+// }
+
+// @keyframes neonTitle {
+//   0% {
+//     text-shadow: 0 0 4px #f1b910, 0 0 7px #f1b910, 0 0 14px #f1b910,
+//       0 0 22px #f1b910;
+//   }
+//   25% {
+//     text-shadow: 0 0 3px #f1b910, 0 0 6px #f1b910, 0 0 12px #f1b910,
+//       0 0 19px #f1b910;
+//   }
+//   50% {
+//     text-shadow: 0 0 1px #f1b910, 0 0 2px #f1b910, 0 0 5px #f1b910,
+//       0 0 10px #f1b910;
+//   }
+//   75% {
+//     text-shadow: 0 0 3px #f1b910, 0 0 6px #f1b910, 0 0 12px #f1b910,
+//       0 0 19px #f1b910;
+//   }
+//   100% {
+//     text-shadow: 0 0 4px #f1b910, 0 0 7px #f1b910, 0 0 14px #f1b910,
+//       0 0 22px #f1b910;
+//   }
+// }

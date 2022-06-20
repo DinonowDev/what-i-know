@@ -1,0 +1,74 @@
+@import url("https://v1.fontapi.ir/css/Vazir");
+@font-face {
+  font-family: "Vazir-Persian";
+  src: url("../assets/fonts/vazir/Vazir-Thin-FD-WOL.eot");
+  src: url("../assets/fonts/vazir/Vazir-Thin-FD-WOL.eot")
+      format("embedded-opentype"),
+    url("../assets/fonts/vazir/Vazir-Thin-FD-WOL.woff2") format("woff2"),
+    url("../assets/fonts/vazir/Vazir-Thin-FD-WOL.woff") format("woff"),
+    url("../assets/fonts/vazir/Vazir-Thin-FD-WOL.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Vazir-Persian";
+  src: url("../assets/fonts/vazir/Vazir-Light-FD-WOL.eot");
+  src: url("../assets/fonts/vazir/Vazir-Light-FD-WOL.eot")
+      format("embedded-opentype"),
+    url("../assets/fonts/vazir/Vazir-Light-FD-WOL.woff2") format("woff2"),
+    url("../assets/fonts/vazir/Vazir-Light-FD-WOL.woff") format("woff"),
+    url("../assets/fonts/vazir/Vazir-Light-FD-WOL.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vazir-Persian";
+  src: url("../assets/fonts/vazir/Vazir-Medium-FD-WOL.eot");
+  src: url("../assets/fonts/vazir/Vazir-Medium-FD-WOL.eot")
+      format("embedded-opentype"),
+    url("../assets/fonts/vazir/Vazir-Medium-FD-WOL.woff2") format("woff2"),
+    url("../assets/fonts/vazir/Vazir-Medium-FD-WOL.woff") format("woff"),
+    url("../assets/fonts/vazir/Vazir-Medium-FD-WOL.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Vazir-Persian";
+  src: url("../assets/fonts/vazir/Vazir-Bold-FD-WOL.eot");
+  src: url("../assets/fonts/vazir/Vazir-Bold-FD-WOL.eot")
+      format("embedded-opentype"),
+    url("../assets/fonts/vazir/Vazir-Bold-FD-WOL.woff2") format("woff2"),
+    url("../assets/fonts/vazir/Vazir-Bold-FD-WOL.woff") format("woff"),
+    url("../assets/fonts/vazir/Vazir-Bold-FD-WOL.ttf") format("truetype");
+  font-weight: 900;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: LaleZar;
+  font-style: normal;
+  font-weight: normal;
+  src: url("../assets/fonts/Lalezar-Font/OTF/Lalezar-Regular.otf"),
+    url("../assets/fonts/Lalezar-Font/TTF/Lalezar-Regular.ttf");
+}
+
+html,
+body {
+  background-color: #1E272E;
+  direction: rtl;
+  padding: 0;
+  margin: 0;
+  font-family: "Vazir-Persian", -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
