@@ -17,9 +17,9 @@ const getUserData = ({ loadingContext, dataContext }) => {
           longitude: res.location.longitude,
         },
         isp: {
-          name: res.company.name,
-          domain: res.company.domain,
-          type: res.company.type,
+          name: res.connection.organization,
+          domain: res.connection.domain,
+          type: res.connection.type,
         },
         ip: res.ip,
         continent: res.location.continent.name,
