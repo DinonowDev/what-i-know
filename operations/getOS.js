@@ -1,6 +1,6 @@
 // get user operating system
 
-const getOS = (setOperatingSystem) => {
+const getOS = (dataContext) => {
   let userAgent = window.navigator.userAgent,
     platform = window.navigator.platform,
     macosPlatforms = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"],
@@ -20,7 +20,7 @@ const getOS = (setOperatingSystem) => {
     os = "Linux";
   }
 
-  setOperatingSystem(os);
+  dataContext.setOperatingSystem(os);
 };
 
 export default getOS;

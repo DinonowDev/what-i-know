@@ -1,5 +1,7 @@
-const getResolution = (setResolution) => {
-  setResolution({
+// get user resolution
+
+const getResolution = (dataContext) => {
+  dataContext.setResolution({
     current: {
       width: window.screen.width,
       height: window.screen.height,

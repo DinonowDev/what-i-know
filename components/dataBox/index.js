@@ -7,15 +7,13 @@ import { FaInternetExplorer, FaChrome } from "react-icons/fa";
 import { CgBattery } from "react-icons/cg";
 import { BiWorld } from "react-icons/bi";
 
-const DataBox = ({
-  os,
-  resolution,
-  userData,
-  batteryStatus,
-  fontsArr,
-  getLocation,
-  userLocation,
-}) => {
+// import context
+import User from "../../context/data";
+import { useContext } from "react";
+
+const DataBox = ({ getLocation, userLocation }) => {
+  const dataContext = useContext(User);
+
   return (
     <div className={classes.dataBox}>
       <div className={classes.dataSection}>
@@ -24,14 +22,15 @@ const DataBox = ({
           <GoDeviceDesktop className={classes.icon} />
         </div>
         <div className={classes.details}>
-          <span>سیستم عامل : {os}</span>
+          <span>سیستم عامل : {dataContext.operatingSystem}</span>
           <span>
-            رزولیشن صفحه نمایش : {resolution.current.height} ×{" "}
-            {resolution.current.width}
+            رزولیشن صفحه نمایش : {dataContext.resolution.current.height} ×{" "}
+            {dataContext.resolution.current.width}
           </span>
           <span>
-            رزولیشن قابل استفاده نمایش : {resolution.available.height} ×{" "}
-            {resolution.available.width}
+            رزولیشن قابل استفاده نمایش :{" "}
+            {dataContext.resolution.available.height} ×{" "}
+            {dataContext.resolution.available.width}
           </span>
         </div>
       </div>
@@ -41,9 +40,19 @@ const DataBox = ({
           <FaInternetExplorer className={classes.icon} />
         </div>
         <div className={classes.details}>
-          <span>سرویس ارائه دهنده اینترنت : {userData.isp.name ? userData.isp.name : "نامشخص"}</span>
-          <span>دامنه : {userData.isp.domain ? userData.isp.domain  : "نامشخص"}</span>
-          <span>نوع : {userData.isp.type}</span>
+          <span>
+            سرویس ارائه دهنده اینترنت :{" "}
+            {dataContext.userData.isp.name
+              ? dataContext.userData.isp.name
+              : "نامشخص"}
+          </span>
+          <span>
+            دامنه :{" "}
+            {dataContext.userData.isp.domain
+              ? dataContext.userData.isp.domain
+              : "نامشخص"}
+          </span>
+          <span>نوع : {dataContext.userData.isp.type}</span>
         </div>
       </div>
       <div className={classes.dataSection}>
@@ -52,9 +61,12 @@ const DataBox = ({
           <CgBattery className={classes.icon} />
         </div>
         <div className={classes.details}>
-          <span>درصد شارژ باتری : {batteryStatus.level * 100 + "%"} </span>
           <span>
-            باتری در حال شارژ است؟ {batteryStatus.charging ? "بله" : "خیر"}
+            درصد شارژ باتری : {dataContext.batteryStatus.level * 100 + "%"}{" "}
+          </span>
+          <span>
+            باتری در حال شارژ است؟{" "}
+            {dataContext.batteryStatus.charging ? "بله" : "خیر"}
           </span>
         </div>
       </div>
@@ -64,11 +76,15 @@ const DataBox = ({
           <FaChrome className={classes.icon} />
         </div>
         <div className={classes.details}>
-          <span>پروکسی فعال است؟ : {userData.isProxy ? "بله" : "خیر"}</span>
-          <span>فیلترشکن فعال است؟ : {userData.isVPN ? "بله" : "خیر"}</span>
-          <span>نام مرورگر : {userData.browser.name}</span>
-          <span>نسخه مرورگر : {userData.browser.version}</span>
-          <span>فونت های قابل اجرای ما در مرورگر شما : {fontsArr.join(" , ")}</span>
+          <span>
+            پروکسی فعال است؟ : {dataContext.userData.isProxy ? "بله" : "خیر"}
+          </span>
+          <span>
+            فیلترشکن فعال است؟ : {dataContext.userData.isVPN ? "بله" : "خیر"}
+          </span>
+          <span>نام مرورگر : {dataContext.userData.browser.name}</span>
+          <span>نسخه مرورگر : {dataContext.userData.browser.version}</span>
+          {/* <span>فونت های قابل اجرای ما در مرورگر شما : {fontsArr.join(" , ")}</span> */}
         </div>
       </div>
       <div className={classes.dataSection}>
@@ -77,13 +93,13 @@ const DataBox = ({
           <BiWorld className={classes.icon} />
         </div>
         <div className={classes.details}>
-          <span>آیپی : {userData.ip}</span>
-          <span>قاره : {userData.continent}</span>
-          <span>کشور : {userData.country}</span>
+          <span>آیپی : {dataContext.userData.ip}</span>
+          <span>قاره : {dataContext.userData.continent}</span>
+          <span>کشور : {dataContext.userData.country}</span>
         </div>
         <iframe
           className={classes.location}
-          src={`https://map.parsijoo.ir/API.html?lat=${userData.coordinates.latitude}&lon=${userData.coordinates.longitude}&zoom=8&m=1`}
+          src={`https://map.parsijoo.ir/API.html?lat=${dataContext.userData.coordinates.latitude}&lon=${dataContext.userData.coordinates.longitude}&zoom=8&m=1`}
         ></iframe>
       </div>
       {userLocation[0] && (

@@ -1,9 +1,9 @@
 // get user battery status
 
-const batteryStatus = (setBatteryStatus) => {
+const batteryStatus = (dataContext) => {
   window.navigator.getBattery().then((res) => {
-    setBatteryStatus({
-      // is charging device 
+    dataContext.setBatteryStatus({
+      // is charging device
       charging: res.charging,
       chargingTime: res.chargingTime,
       dischargingTime: res.dischargingTime,

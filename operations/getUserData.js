@@ -1,13 +1,17 @@
 // import axios library for req
 import axios from "axios";
 
-const getUserData = (setUserData) => {
+const getUserData = ({ loadingContext, dataContext }) => {
   axios
-    .get(`https://api.ipregistry.co/?key=j8690vabf4x7yfsp`)
-    .then((response) => {
+  .get(`https://api.ipregistry.co/?key=j8690vabf4x7yfsp`)
+  .then((response) => {
+      if(response.data.ip){
+        loadingContext.setLoading(false);
+      }
+
       let res = response.data;
 
-      setUserData({
+      dataContext.setUserData({
         coordinates: {
           latitude: res.location.latitude,
           longitude: res.location.longitude,
@@ -28,9 +32,11 @@ const getUserData = (setUserData) => {
           version: res.user_agent.version,
         },
       });
+
+      
     })
     .catch((error) => {
-      console.error(error)
+      console.error(error);
     });
 };
 
