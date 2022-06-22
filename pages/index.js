@@ -24,7 +24,7 @@ export default function Home() {
   };
 
   const getLocation = () => {
-    window.navigator.geolocation.getCurrentPosition(successfulLookup);
+    navigator.geolocation.getCurrentPosition(successfulLookup,alert("عملیات با خطا مواجه شد!"));
   };
 
   return (

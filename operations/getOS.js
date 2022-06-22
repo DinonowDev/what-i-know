@@ -1,8 +1,8 @@
 // get user operating system
 
 const getOS = (dataContext) => {
-  let userAgent = window.navigator.userAgent,
-    platform = window.navigator.platform,
+  let userAgent = navigator.userAgent,
+    platform = navigator.platform,
     macosPlatforms = ["Macintosh", "MacIntel", "MacPPC", "Mac68K"],
     windowsPlatforms = ["Win32", "Win64", "Windows", "WinCE"],
     iosPlatforms = ["iPhone", "iPad", "iPod"],

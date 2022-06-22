@@ -31,12 +31,22 @@ const Layout = ({ children }) => {
   const dataContext = useContext(User);
 
   useEffect(() => {
-    getUserData({loadingContext, dataContext});
+    getUserData({ loadingContext, dataContext });
     getResolution(dataContext);
     // getFonts();
-    getBatteryStatus(dataContext);
     getOS(dataContext);
   }, []);
+
+  useEffect(() => {
+    if (
+      dataContext?.userData?.browser?.name.includes("Edge") ||
+      dataContext?.userData?.browser?.name.includes("Chrome") ||
+      dataContext?.userData?.browser?.name.includes("WebView")
+    ) {
+      console.log("get")
+      getBatteryStatus(dataContext);
+    }
+  }, [dataContext.userData]);
 
   return (
     <div className={classes.main}>

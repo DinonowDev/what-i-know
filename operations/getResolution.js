@@ -3,12 +3,12 @@
 const getResolution = (dataContext) => {
   dataContext.setResolution({
     current: {
-      width: window.screen.width,
-      height: window.screen.height,
+      width: screen.width,
+      height: screen.height,
     },
     available: {
-      width: window.screen.availWidth,
-      height: window.screen.availHeight,
+      width: screen.availWidth,
+      height: screen.availHeight,
     },
   });
 };

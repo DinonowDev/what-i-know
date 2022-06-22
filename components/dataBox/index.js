@@ -55,21 +55,23 @@ const DataBox = ({ getLocation, userLocation }) => {
           <span>نوع : {dataContext.userData.isp.type}</span>
         </div>
       </div>
-      <div className={classes.dataSection}>
-        <div className={classes.titleBox}>
-          <h2>وضعیت باتری</h2>
-          <CgBattery className={classes.icon} />
+      {dataContext.batteryStatus.level ? (
+        <div className={classes.dataSection}>
+          <div className={classes.titleBox}>
+            <h2>وضعیت باتری</h2>
+            <CgBattery className={classes.icon} />
+          </div>
+          <div className={classes.details}>
+            <span>
+              درصد شارژ باتری : {dataContext.batteryStatus.level * 100 + "%"}{" "}
+            </span>
+            <span>
+              باتری در حال شارژ است؟{" "}
+              {dataContext.batteryStatus.charging ? "بله" : "خیر"}
+            </span>
+          </div>
         </div>
-        <div className={classes.details}>
-          <span>
-            درصد شارژ باتری : {dataContext.batteryStatus.level * 100 + "%"}{" "}
-          </span>
-          <span>
-            باتری در حال شارژ است؟{" "}
-            {dataContext.batteryStatus.charging ? "بله" : "خیر"}
-          </span>
-        </div>
-      </div>
+      ) : null}
       <div className={classes.dataSection}>
         <div className={classes.titleBox}>
           <h2>اتصالات و مرورگر</h2>
